@@ -521,7 +521,9 @@ fun! manpageview#ManPageView(viamap,bknum,...) range
 
   " let manpages format themselves to specified window width
   " this setting probably only affects the linux "man" command.
-  let $MANWIDTH= winwidth(0)
+  if $MANWIDTH == ""
+   let $MANWIDTH = winwidth(0)
+  endif
 
   " add some maps for multiple manpage handling {{{3
   " (some manpages on some systems have multiple NAME... topics provided on a single manpage)
@@ -763,8 +765,11 @@ fun! s:MPVSaveSettings()
   else
    let &sxq= ""
   endif
+
+  if $MANWIDTH == ""
+   let $MANWIDTH = winwidth(0)
+  endif
   let s:curmanwidth = $MANWIDTH
-  let $MANWIDTH     = winwidth(0)
 "  call Dret("s:MPVSaveSettings")
  endif
 
