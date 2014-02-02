@@ -502,7 +502,7 @@ fun! manpageview#ManPageView(...) range
   " ---------------------------------------------------------------------
   " let manpages format themselves to specified window width {{{3
   " this setting probably only affects the linux "man" command.
-  if exists("$MANWIDTH")
+  if !exists("$MANWIDTH")
    let $MANWIDTH = winwidth(0)
   endif
 
