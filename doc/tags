@@ -34,6 +34,7 @@ manpageview-extend	manpageview.txt	/*manpageview-extend*
 manpageview-format	manpageview.txt	/*manpageview-format*
 manpageview-history	manpageview.txt	/*manpageview-history*
 manpageview-info	manpageview.txt	/*manpageview-info*
+manpageview-leftmouse	manpageview.txt	/*manpageview-leftmouse*
 manpageview-man	manpageview.txt	/*manpageview-man*
 manpageview-open	manpageview.txt	/*manpageview-open*
 manpageview-options	manpageview.txt	/*manpageview-options*
@@ -44,6 +45,7 @@ manpageview-php	manpageview.txt	/*manpageview-php*
 manpageview-python	manpageview.txt	/*manpageview-python*
 manpageview-search	manpageview.txt	/*manpageview-search*
 manpageview-shell	manpageview.txt	/*manpageview-shell*
+manpageview-specialhandler	manpageview.txt	/*manpageview-specialhandler*
 manpageview-suggest	manpageview.txt	/*manpageview-suggest*
 manpageview-updates	manpageview.txt	/*manpageview-updates*
 manpageview-usage	manpageview.txt	/*manpageview-usage*

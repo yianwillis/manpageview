@@ -1,4 +1,4 @@
-This is a mirror of manpageview (v25m, Apr 05, 2013), a vim plugin for easy viewing of man pages in vim under Unix systems.
+This is a mirror of manpageview (v25q, Feb 21, 2015), a vim plugin for easy viewing of man pages in vim under Unix systems.
 The plugin has been "withdrawn" from vim.org so this serves as a repository that can be used with Vundle.
 
 The original plugin uses the VimBall format, but I have changed this to a flat layout because VimBall sucks.
