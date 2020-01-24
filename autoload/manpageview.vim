@@ -522,6 +522,12 @@ fun! manpageview#ManPageView(...) range
   endif
 
   " ---------------------------------------------------------------------
+  " let manpages keep formatting even when piped.
+  if $MAN_KEEP_FORMATTING == ""
+   let $MAN_KEEP_FORMATTING = "1"
+  endif
+
+  " ---------------------------------------------------------------------
   " add some maps for multiple manpage handling {{{3
   " (some manpages on some systems have multiple NAME... topics provided on a single manpage)
   " The code here has PageUp/Down typically do a ctrl-f, ctrl-b; however, if there are multiple
@@ -904,7 +910,8 @@ fun! s:MPVSaveSettings()
 
   if !exists("s:sxqkeep")
 "   call Dfunc("s:MPVSaveSettings()")
-   let s:manwidth          = expand("$MANWIDTH")
+   let s:manwidthkeep      = $MANWIDTH
+   let s:mankeepformattingkeep = $MAN_KEEP_FORMATTING
    let s:sxqkeep           = &sxq
    let s:srrkeep           = &srr
    let s:repkeep           = &report
@@ -922,10 +929,6 @@ fun! s:MPVSaveSettings()
    let &sxq= ""
   endif
 
-  if $MANWIDTH == ""
-   let $MANWIDTH = winwidth(0)
-  endif
-  let s:curmanwidth = $MANWIDTH
 "  call Dret("s:MPVSaveSettings")
  endif
  if &ft == "man" && exists("s:history") && exists("s:ihist")
@@ -947,7 +950,8 @@ fun! s:MPVRestoreSettings()
    let &gd       = s:gdkeep      | unlet s:gdkeep
    let &cwh      = s:cwhkeep     | unlet s:cwhkeep
    let &l:magic  = s:magickeep   | unlet s:magickeep
-   let $MANWIDTH = s:curmanwidth | unlet s:curmanwidth
+   let $MANWIDTH = s:manwidthkeep | unlet s:manwidthkeep
+   let $MAN_KEEP_FORMATTING = s:mankeepformattingkeep | unlet s:mankeepformattingkeep
 "   call Dret("s:MPVRestoreSettings")
   endif
 endfun
