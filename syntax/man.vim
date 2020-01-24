@@ -49,7 +49,7 @@ syn match   manSubSection	".*$"					contained
 syn match   manOptionWord	"\s[+-]\a\+\>"
 
 if has("conceal")
- setlocal cole=3
+ setlocal cole=3 cocu=nc
  syn match manSubTitle		/\(.\b.\)\+/	contains=manSubTitleHide
  syn match manUnderline		/\(_\b.\)\+/	contains=manSubTitleHide
  syn match manSubTitleHide	/.\b/		conceal contained

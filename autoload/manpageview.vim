@@ -667,8 +667,8 @@ fun! manpageview#ManPageView(...) range
 	 else
 "	  call Decho("(ManPageView) ‣normal: exe ".cmdmod."r!".pgm." ".iopt." ".mpb." '".topic."' ".(exists("s:iconv")? s:iconv : "").s:nostderr)
 	  exe cmdmod."r!".pgm." ".iopt." ".mpb." ".shellescape(topic,1).(exists("s:iconv")? " ".s:iconv : "").s:nostderr
-	endif
-     exe cmdmod.'sil!  %s/.\b//ge'
+	 endif
+"     exe cmdmod.'sil!  %s/.\b//ge'
     endif
 	setlocal ro nomod noswf
    endif
